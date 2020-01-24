@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<style>
+    body {
+        background-image: url('http://cleancanvas.herokuapp.com/img/backgrounds/color-splash.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+</style> 
+<head>
+   <title>Led Visuals</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   <link rel="shortcut icon" href="https://img.icons8.com/dusk/64/000000/led-diode.png" />
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+    <div class="container">
+        {%for theme in themes%}
+            <!-- <input type="submit" name="{{theme}}" value="{{theme}}", class="btn"> -->
+            {%if curTheme == theme%}
+                <a href="/{{theme}}" class="list-group-item list-group-item-action active text-center" role="button">{{theme}}</a>
+            {%else%}
+                <a href="/{{theme}}" class="list-group-item list-group-item-action text-center" role="button">{{theme}}</a>
+            {%endif%}
+        {%endfor%}
+    </div>
+</body>
